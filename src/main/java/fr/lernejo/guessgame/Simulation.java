@@ -11,7 +11,7 @@ import java.util.Date;
 
 public class Simulation {
 
-    private final Logger logger = LoggerFactory.getLogger("simulation");
+    private final Logger logger = LoggerFactory.getLogger(Simulation.class.getName());
     private Player player;  //TODO add variable type
     private long numberToGuess; //TODO add variable type
 
@@ -52,7 +52,7 @@ logger.log("The comparaison is value : "+value+" and response : "+numberToGuess)
             if(nextRound()){
                 break;
             }
-        //    logger.log("The user has not found the number guess");
+        logger.log("The user has not found the number guess");
         }while(cmp++<=count);
         long end = System.currentTimeMillis();
         Date elapsed = new Date(end-start);
