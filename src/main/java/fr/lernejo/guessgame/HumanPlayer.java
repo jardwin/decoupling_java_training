@@ -11,14 +11,12 @@ public class HumanPlayer implements Player{
 
     @Override
     public long askNextGuess() {
-        System.out.println("Enter a number to be guess");
         long number = -1;
         while (number==-1){
             try {
                 number = Long.parseLong(scan.nextLine());
             }catch (Exception e){
                 _log.log("Error occurred. message : "+e.getMessage());
-                System.out.println("The format number is not valid");
             }
         }
 
@@ -29,11 +27,11 @@ public class HumanPlayer implements Player{
     @Override
     public void respond(boolean lowerOrGreater) {
         if(lowerOrGreater){
-            System.out.println("guess number is greater");
             _log.log("The number given by the user is greater than the guess");
+            System.out.println("The number given by the user is greater than the guess");
         }else{
-            System.out.println("guess number is lower");
-            _log.log("The number given by the user is lower than the guess");
+            _log.log("The number given by the user is greater than the guess");
+            System.out.println("The number given by the user is lower than the guess");
         }
     }
 }

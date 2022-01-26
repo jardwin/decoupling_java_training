@@ -28,7 +28,6 @@ public class Simulation {
      */
     private boolean nextRound() {
         long value = player.askNextGuess();
-        logger.log("The comparaison is value : "+value+" and response : "+numberToGuess);
         if(value > numberToGuess){
             player.respond(false);
         }else if (value < numberToGuess){
@@ -42,7 +41,6 @@ public class Simulation {
 
     public void loopUntilPlayerSucceed() {
         while (!nextRound()){
-            logger.log("The user has not found the number guess");
         }
     }
     public void loopUntilPlayerSucceed(long count) {
@@ -52,7 +50,6 @@ public class Simulation {
             if(nextRound()){
                 break;
             }
-        logger.log("The user has not found the number guess");
         }while(cmp++<=count);
         long end = System.currentTimeMillis();
         Date elapsed = new Date(end-start);
