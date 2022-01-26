@@ -28,7 +28,7 @@ public class Simulation {
      */
     private boolean nextRound() {
         long value = player.askNextGuess();
-logger.log("The comparaison is value : "+value+" and response : "+numberToGuess);
+        logger.log("The comparaison is value : "+value+" and response : "+numberToGuess);
         if(value > numberToGuess){
             player.respond(false);
         }else if (value < numberToGuess){
